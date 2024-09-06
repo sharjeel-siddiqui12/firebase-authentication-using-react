@@ -3,6 +3,11 @@ import React, { useState } from "react";
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -23,6 +28,23 @@ function Signup() {
     <div className="flex flex-col items-center justify-center m-10">
       <h1 className="text-3xl font-bold mb-4">Signup</h1>
       <form onSubmit={handleSubmit} className="w-64">
+       
+      <div className="mb-4">
+          <label htmlFor="name" className="block mb-2 font-medium">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={handleNameChange}
+            placeholder="Enter name"
+            autoComplete="on"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+       
         <div className="mb-4">
           <label htmlFor="email" className="block mb-2 font-medium">
             Email
@@ -37,6 +59,7 @@ function Signup() {
             required
           />
         </div>
+        
         <div className="mb-4">
           <label htmlFor="password" className="block mb-2 font-medium">
             Password

@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 import { BrowserRouter } from "react-router-dom";
+import { firebaseConfig } from './components/fireBaseConfig/firebaseConfig.js';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -12,14 +13,7 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyC96l8-Z5YzQjNKkvw31YddrtmglAX2Sdg",
-  authDomain: "fire-auth-reactjs.firebaseapp.com",
-  projectId: "fire-auth-reactjs",
-  storageBucket: "fire-auth-reactjs.appspot.com",
-  messagingSenderId: "452690338785",
-  appId: "1:452690338785:web:acfc1247e178c982b7a8a0"
-};
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
