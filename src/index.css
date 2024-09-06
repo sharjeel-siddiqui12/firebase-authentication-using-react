@@ -1,0 +1,24 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+ /* .room {
+  height: 100vh;
+  margin: 0;
+}
+
+.lit {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.mainPost{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
