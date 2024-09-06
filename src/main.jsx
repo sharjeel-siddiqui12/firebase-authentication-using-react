@@ -16,7 +16,7 @@ import { getAuth } from "firebase/auth";
 
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig); // firebase configuration => make sure to replace with your own (go to project settings in firebase and copy your configuration then make another file named firebaseConfig.js and export the configuration)
 const auth = getAuth(app);
 
 createRoot(document.getElementById('root')).render(
