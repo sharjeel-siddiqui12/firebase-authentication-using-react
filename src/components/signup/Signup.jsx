@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -19,14 +19,34 @@ function Signup() {
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
     const auth = getAuth();
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
         console.log("firebase signup success", user);
+
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            // Email verification sent!
+            console.log("Email verification sent!");
+          });
+
+          updateProfile(auth.currentUser, {
+            displayName: name,
+          })
+            .then(() => {
+              // Profile updated!
+              console.log("Profile updated!");
+            })
+            .catch((error) => {
+              // An error occurred
+              console.log("Profile update error", error);
+            });
         // ...
       })
       .catch((error) => {
